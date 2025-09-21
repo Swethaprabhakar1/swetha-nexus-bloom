@@ -57,6 +57,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Cyberpunk neon colors
+        "neon-blue": "hsl(var(--neon-blue))",
+        "neon-purple": "hsl(var(--neon-purple))",
+        "neon-green": "hsl(var(--neon-green))",
+        "neon-pink": "hsl(var(--neon-pink))",
+        "dark-surface": "hsl(var(--dark-surface))",
+        "darker-surface": "hsl(var(--darker-surface))",
+      },
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+        mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
       },
       borderRadius: {
         lg: "var(--radius)",
