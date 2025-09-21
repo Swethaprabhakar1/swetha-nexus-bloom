@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Canvas } from "@react-three/fiber";
-import { Float, Text3D } from "@react-three/drei";
+import { Float, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
 const SkillCard = ({ skill, index }: { skill: { category: string; skills: string[]; color: string }; index: number }) => {
   return (
@@ -111,15 +111,42 @@ const SkillsSection = () => {
             <directionalLight position={[10, 10, 5]} intensity={1} />
             
             <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-              <Text3D
-                font="/fonts/inter_bold.json"
-                size={0.5}
-                height={0.1}
-                position={[-2, 0, 0]}
-              >
-                SKILLS
-                <meshStandardMaterial color="#00d4ff" />
-              </Text3D>
+              <Sphere args={[1, 32, 32]} position={[-2, 0, 0]}>
+                <MeshDistortMaterial
+                  color="#00d4ff"
+                  attach="material"
+                  distort={0.4}
+                  speed={3}
+                  roughness={0.2}
+                  metalness={0.8}
+                />
+              </Sphere>
+            </Float>
+            
+            <Float speed={1.5} rotationIntensity={0.8} floatIntensity={1.5}>
+              <Sphere args={[0.7, 32, 32]} position={[1, 0.5, -1]}>
+                <MeshDistortMaterial
+                  color="#8b5cf6"
+                  attach="material"
+                  distort={0.3}
+                  speed={4}
+                  roughness={0.1}
+                  metalness={0.9}
+                />
+              </Sphere>
+            </Float>
+            
+            <Float speed={2.5} rotationIntensity={1.2} floatIntensity={2.2}>
+              <Sphere args={[0.5, 32, 32]} position={[0, -1, 1]}>
+                <MeshDistortMaterial
+                  color="#00ff88"
+                  attach="material"
+                  distort={0.5}
+                  speed={2}
+                  roughness={0.3}
+                  metalness={0.7}
+                />
+              </Sphere>
             </Float>
           </Canvas>
         </motion.div>
